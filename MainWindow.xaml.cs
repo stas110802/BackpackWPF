@@ -43,7 +43,7 @@ namespace BackpackWPF
             };
             BackpackInfos.Add(item);
 
-            dt.Items.Add(item);
+            dataGridMain.Items.Add(item);
         }
 
         private void buttonSolve_Click(object sender, RoutedEventArgs e)
