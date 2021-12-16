@@ -20,17 +20,18 @@ namespace BackpackWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<BackpackInfo> BackpackInfos { get; set; } 
-        
+        public List<BackpackInfo> BackpackInfos { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
             BackpackInfos = new List<BackpackInfo>();
-            
         }
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
+            if (IsVerified() == false) return;
+
             int.TryParse(priceBox.Text, out int price);
             int.TryParse(weightBox.Text, out int weight);
 
@@ -47,7 +48,11 @@ namespace BackpackWPF
 
         private void buttonSolve_Click(object sender, RoutedEventArgs e)
         {
-            int.TryParse(capacityBox.Text, out int capacity);           
+            listOfID.Text = "";
+
+            int.TryParse(capacityBox.Text, out int capacity);
+            if (capacity == 0) return;
+
             var algoritm = new BackpackAlgoritm(BackpackInfos, capacity);
 
             int maxPriceItems = algoritm.GetMaxPrices();
@@ -56,9 +61,20 @@ namespace BackpackWPF
             maxProfitPrice.Text = maxPriceItems.ToString();
             foreach (var item in listID)
             {
-                listOfID.Text += $"{item}, ";
+                listOfID.Text += $"{item - 1}, ";
             }
-            //listOfID.Text.Remove(listOfID.Text.Length);
+            listOfID.Text = listOfID.Text.Remove(listOfID.Text.Length-2);
+        }
+
+        private bool IsVerified()
+        {
+            if (priceBox.Text.Length == 0 ||
+                weightBox.Text.Length == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

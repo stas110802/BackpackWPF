@@ -10,7 +10,6 @@ namespace BackpackWPF
     {
         public int ID { get; set; }
         public int Price { get; set; }
-        public int Weight { get; set; }
-        
+        public int Weight { get; set; }       
     }
 }

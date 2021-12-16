@@ -22,8 +22,7 @@ namespace BackpackWPF
                 _values[item.ID] = item.Price;
             }
 
-            _maxCapcity = maxCapacity;
-            
+            _maxCapcity = maxCapacity;           
         }
 
         public int[] _weight;
@@ -53,8 +52,8 @@ namespace BackpackWPF
                         else
                         {
                             var prev = arr[i - 1, j];
-                            var f = _values[i - 1] + arr[i - 1, j - _weight[i - 1]];
-                            arr[i, j] = Math.Max(prev, f);
+                            var second = _values[i - 1] + arr[i - 1, j - _weight[i - 1]];
+                            arr[i, j] = Math.Max(prev, second);
                         }
 
                     }
@@ -77,7 +76,6 @@ namespace BackpackWPF
             else
             {
                 Print(i - 1, j - _weight[i - 1]);
-                //Console.Write(i + " ");
                 _listOfID.Add(i);
             }
         }

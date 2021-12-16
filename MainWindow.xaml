@@ -15,12 +15,12 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <TextBox x:Name="weightBox" HorizontalAlignment="Left" Height="46" Margin="10,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" />
-        <TextBox x:Name="priceBox" HorizontalAlignment="Left" Height="46" Margin="196,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" />
+        <TextBox x:Name="weightBox" HorizontalAlignment="Left" FontSize="15" Height="46" Margin="10,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" />
+        <TextBox x:Name="priceBox" HorizontalAlignment="Left" FontSize="15" Height="46" Margin="196,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" />
 
         <TextBlock HorizontalAlignment="Left" FontSize="15" Margin="10,325,0,0" TextWrapping="Wrap" Text="Вес" VerticalAlignment="Top" Height="23" Width="94"/>
         <TextBlock HorizontalAlignment="Left" FontSize="15" Margin="196,325,0,0" TextWrapping="Wrap" Text="Стоимость" VerticalAlignment="Top" Height="23" Width="94"/>
-        <TextBox x:Name="capacityBox" HorizontalAlignment="Left" Height="33" Margin="501,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="capacityBox" FontSize="15" HorizontalAlignment="Left" Height="33" Margin="501,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
         <TextBlock HorizontalAlignment="Left" FontSize="15" Margin="501,10,0,0" TextWrapping="Wrap" Text="Вместимость рюкзака" VerticalAlignment="Top" Height="23" Width="252"/>
 
         <Button x:Name="buttonAdd" Content="Добавить" HorizontalAlignment="Left" Margin="357,353,0,0" VerticalAlignment="Top" Width="109" Height="46" Click="buttonAdd_Click" />
