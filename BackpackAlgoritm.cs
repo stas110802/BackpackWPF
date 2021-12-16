@@ -72,7 +72,7 @@ namespace BackpackWPF
 
             if (_arr[i - 1, j] == _arr[i, j])
             {               
-                //Print(i - 1, j);
+                Print(i - 1, j);
             }
             else
             {
